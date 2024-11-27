@@ -28,10 +28,185 @@ MathJax.Hub.Config({
 <div id="toptitle">
 <h1>Research</h1>
 </div>
-<p>See my <a href="https://scholar.google.com/citations?hl=en&amp;user=XLHpQy8AAAAJ" target=&ldquo;blank&rdquo;>google scholar</a> profile for a list of publications.</p>
+<p>My recent work focuses on the development of novel fault-tolerant architectures for large-scale quantum computers, spanning quantum error correction, quantum simulation, compilation, and hardware architecture.
+</p>
+<p>See my <a href="https://scholar.google.com/citations?hl=en&amp;user=XLHpQy8AAAAJ" target=&ldquo;blank&rdquo;>google scholar</a> profile for a list of publications.
+</p>
+<h2>Quantum Error Correction: Theory and Implementation</h2>
+<p>Quantum error correction (QEC), where many physical qubits redundantly encode logical information and correct errors, is at the core of realizing large-scale quantum computers: it bridges the massive gap between error rates required (\(&lt;10^{-12}\)) and realistic hardware error rates (\(10^{-2}- 10^{-4}\)). Unfortunately, it also comes with a significant overhead, with standard schemes based on the surface code and lattice surgery requiring thousands of physical qubits per logical qubit and resulting in a 30\(\times\) slow down of the logical clock speed relative to the physical clock speed.
+</p>
+<p>How can we reduce this overhead? Our work has been exploring novel QEC schemes, motivated by hardware capabilities of reconfigurable quantum platforms such as neutral atom arrays, to lower the space-time cost of QEC. We have also been exploring experimental realizations of QEC on neutral atom hardware, including one of the first realizations of logical quantum algorithms.
+</p>
+<h3>Quantum Low-Density Parity-Check Codes</h3>
+<p>One approach we explored is to use quantum low-density parity-check (qLDPC) codes with higher encoding rate, reducing the <i><b>space overhead</b></i>. We show this approach can have competitive thresholds, can be implemented efficiently on neutral atom hardware, and has some convenient logical gates:
+</p>
+<table class="imgtable"><tr><td>
+<img src="data/ldpc.JPG" alt="LDPC codes" width="250 px" height="IMGLINKTARGET" />&nbsp;</td>
+<td align="left"><ul>
+<li><p>Q. Xu\(^*\), J. P. Bonilla Ataides\(^*\), C. A. Pattison, N. Raveendran, D. Bluvstein, J. Wurtz, B. Vasi\(\check{\textrm{c}}\), M. D. Lukin, L. Jiang\(^\dagger\), <b>H.&nbsp;Zhou</b>\(^\dagger\), <a href="https://www.nature.com/articles/s41567-024-02479-z" target=&ldquo;blank&rdquo;>&lsquo;&lsquo;Constant-Overhead Fault-Tolerant Quantum Computation with Reconfigurable Atom Arrays"</a>, Nature Physics 20, 1084 (2024); QIP &rsquo;24
+</p>
+</li>
+<li><p>Q. Xu, <b>H. Zhou</b>, G. Zheng, D. Bluvstein, J. P. Bonilla Ataides, M. D. Lukin, L. Jiang, <a href="https://arxiv.org/abs/2407.18490" target=&ldquo;blank&rdquo;>&lsquo;&lsquo;Fast and Parallelizable Logical Computation with Homological Product Codes"</a>, arXiv:2407.18490
+</p>
+</li>
+</ul>
+</td></tr></table>
+<h3>Transversal Algorithmic Fault Tolerance</h3>
+<p>Another approach is to use transversal gates and only \(O(1)\) rounds of syndrome extraction per logical gate, reducing the <i><b>time overhead</b></i>. We show this approach can speed up the logical clock speed by a factor of the code distance \(d\), assuming fast classical decoding:
+</p>
+<table class="imgtable"><tr><td>
+<img src="data/AFT.JPG" alt="Algorithmic fault tolerance" width="250 px" height="IMGLINKTARGET" />&nbsp;</td>
+<td align="left"><ul>
+<li><p><b>H.&nbsp;Zhou</b>\(^{\dagger,*}\), C. Zhao\(^*\), M. Cain, D. Bluvstein, C. Duckering, H.-Y. Hu, S.-T. Wang, A. Kubica, M. D. Lukin\(^\dagger\), <a href="https://arxiv.org/abs/2406.17653" target=&ldquo;blank&rdquo;>&lsquo;&lsquo;Algorithmic Fault Tolerance for Fast Quantum Computing"</a>, arXiv:2406.17653 (2024)
+</p>
+</li>
+<li><p>M. Cain, C. Zhao, <b>H. Zhou</b>, N. Meister, J. P. Bonilla Ataides, A. Jaffe, D. Bluvstein, M. D. Lukin, <a href="https://arxiv.org/abs/2403.03272" target=&ldquo;blank&rdquo;>&lsquo;&lsquo;Correlated Decoding of Logical Algorithms with Transversal Gates"</a>, arXiv:2403.03272
+</p>
+</li>
+</ul>
+</td></tr></table>
+<h3>Experimental Realizations of Quantum Error Correction</h3>
+<p>It's a particularly exciting time for quantum error correction, with early experimental demonstrations becoming accessible. In this experimental work led by Harvard University, with contributions from QuEra, UMD/NIST and MIT, we report the realization of a programmable quantum processor with up to 48 encoded logical qubits, utilizing the high control parallelism in neutral atom systems. We demonstrate improvement of surface code two-qubit logic gates by scaling the code distance from d=3 to d=7, fault-tolerantly prepare logical GHZ states, and realize computationally complex sampling circuits with up to 48 logical qubits, 228 logical two-qubit gates and 48 logical CCZ gates. These results herald the advent of early error-corrected quantum computation and chart a path towards large-scale logical processors.
+</p>
+<table class="imgtable"><tr><td>
+<img src="data/neutral_atom.JPG" alt="Neutral atom logical processor" width="250 px" height="IMGLINKTARGET" />&nbsp;</td>
+<td align="left"><ul>
+<li><p>D. Bluvstein, S. J. Evered, A. A. Geim. S. H. Li, <b>H. Zhou</b>, T. Manovitz, S. Ebadi, M. Cain, M. Kalinowski, D. Hangleiter, J. P. Bonilla Ataides, N. Maskara, I. Cong, X. Gao, P. Sales Rodriguez, T. Karolyshyn, G. Semeghini, M. J. Gullans, M. Greiner, V. Vuletic, M. D. Lukin, <a href="https://www.nature.com/articles/s41586-023-06927-3" target=&ldquo;blank&rdquo;>Logical Quantum Processor Based on Reconfigurable Atom Arrays</a>, Nature 626, 58-65 (2024)
+</p>
+</li>
+<li><p>S. J. Evered\(^*\), D. Bluvstein\(^*\), M. Kalinowski\(^*\), S. Ebadi, T. Manovitz, <b>H. Zhou</b>, S. H. Li, A. A. Geim, T. T. Wang, N. Maskara, H. Levine, G. Semeghini, M. Greiner, V. Vuletic, M. D. Lukin, <a href="https://www.nature.com/articles/s41586-023-06481-y" target=&ldquo;blank&rdquo;>&lsquo;&lsquo;High-Fidelity Parallel Entangling Gates on a Neutral Atom Quantum Computer"</a>, Nature 622, 268-272 (2023)
+</p>
+</li>
+</ul>
+</td></tr></table>
+<h2>Distributed Quantum Computing and Quantum Networking</h2>
+<p>As we look past single-node quantum computers, how can we most efficiently establish entanglement between multiple networked compute nodes? We explored methods for reducing the overhead required to establish high-fidelity logical entanglement between nodes, by developing protocols for constant-rate entanglement distillation. We find that they not only have theoretical guarantees for the distillation overhead, but can also provide an order-of-magnitude practical communication overhead reduction.
+</p>
+<table class="imgtable"><tr><td>
+<img src="data/distillation.JPG" alt="Quantum networking" width="250 px" height="IMGLINKTARGET" />&nbsp;</td>
+<td align="left"><ul>
+<li><p>C. A. Pattison\(^{\dagger,*}\), G. Baranes\(^*\), J. P. Bonilla Ataides, M. D. Lukin, <b>H. Zhou</b>\(^\dagger\), <a href="https://arxiv.org/abs/2408.15936" target=&ldquo;blank&rdquo;>&lsquo;&lsquo;Fast Quantum Interconnects via Constant-Rate Entanglement Distillation"</a>, arXiv:2408.15936, presented at MICRO&rsquo;24 and SOSP&rsquo;24 joint workshop on QuantumOS
+</p>
+</li>
+</ul>
+</td></tr></table>
+<h2>Hamiltonian Engineering and Quantum Simulation</h2>
+<p>One of the key areas where quantum computers and other quantum systems are expected to be useful is in simulating quantum many-body systems. We've developed novel methods for robust Hamiltonian simulation, and used these to study a variety of phenomena in interacting quantum systems.
+</p>
+<h3>Robust Hamiltonian Engineering for Interacting Qubits and Qudits</h3>
+<p>Can we engineer the Hamiltonian of a quantum system, to turn a quantum simulator of one specific Hamiltonian into a simulator of many desired systems? Moreover, can we do this robustly, in the presence of disorder, control imperfections, and other undesired effects?
+</p>
+<p>My PhD work developed novel methods for robust Hamiltonian simulation in quantum many-body systems with constrained control, in a particularly challenging setting where the undesirable disorder is orders of magnitude larger than the target interaction. Despite this, we were able to achieve robust control of the interacting many-body system, allowing the exploration of interesting quantum many-body phenomena.
+</p>
+<table class="imgtable"><tr><td>
+<img src="data/ham_eng.JPG" alt="Hamiltonian engineering" width="250 px" height="IMGLINKTARGET" />&nbsp;</td>
+<td align="left"><ul>
+<li><p><b>H. Zhou</b>\(^*\), H. Gao\(^*\), N. T. Leitao, O. Makarova, I. Cong, A. M. Douglas, L. S. Martin, M. D. Lukin, <a href="https://journals.aps.org/prx/abstract/10.1103/PhysRevX.14.031017" target=&ldquo;blank&rdquo;>&lsquo;&lsquo;Robust Hamiltonian Engineering for Interacting Qudit Systems"</a>, Phys. Rev. X 14, 031017 (2024)
+</p>
+</li>
+<li><p>M. Tyler\(^*\), <b>H. Zhou</b>\(^*\), L. S. Martin, N. T. Leitao, M. D. Lukin, <a href="https://journals.aps.org/pra/abstract/10.1103/PhysRevA.108.062602" target=&ldquo;blank&rdquo;>&lsquo;&lsquo;Higher-Order Methods for Hamiltonian Engineering Pulse Sequence Design"</a>, Phys. Rev. A 108, 062602 (2023)
+</p>
+</li>
+</ul>
+</td></tr></table>
+<ul>
+<li><p>J. Choi\(^*\), <b>H. Zhou</b>\(^*\), H. S. Knowles, R. Landig, S. Choi, M. D. Lukin, <a href="https://journals.aps.org/prx/abstract/10.1103/PhysRevX.10.031002" target=&ldquo;blank&rdquo;>&lsquo;&lsquo;Robust Dynamic Hamiltonian Engineering of Many-Body Spin Systems"</a>, Phys. Rev. X 10, 031002 (2020)
+</p>
+</li>
+<li><p>C. Miller, A. N. Carroll, J. Lin, H. Hirzler, H. Gao, <b>H. Zhou</b>, M. D. Lukin, J. Ye, <a href="https://www.nature.com/articles/s41586-024-07883-2" target=&ldquo;blank&rdquo;>&lsquo;&lsquo;Two-Axis Twisting using Floquet-Engineered XYZ Spin Models with Polar Molecules"</a>, Nature 633, 332-337 (2024)
+</p>
+</li>
+</ul>
+<h3>Thermalization and Dynamics in Interacting Many-Body Systems</h3>
+<p>Building on these tools, we've studied a variety of phenomena related to out-of-equilibrium phases and dynamics in quantum many-body systems. This includes one of the first realizations of discrete time-crystalline order, and the thermalization dynamics in various spin models.
+</p>
+<table class="imgtable"><tr><td>
+<img src="data/time_crystals.JPG" alt="Hamiltonian engineering" width="250 px" height="IMGLINKTARGET" />&nbsp;</td>
+<td align="left"><ul>
+<li><p>L. S. Martin\(^*\), <b>H. Zhou</b>\(^*\), N. T. Leitao\(^*\), N. Maskara, O. Makarova, H. Gao, Q.-Z. Zhu, M. Park, M. Tyler, H. Park, S. Choi, M. D. Lukin, <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.130.210403" target=&ldquo;blank&rdquo;>&lsquo;&lsquo;Controlling Local Thermalization Dynamics in a Floquet-Engineered Dipolar Ensemble"</a>, Phys. Rev. Lett. 130, 210403 (2023)
+</p>
+</li>
+<li><p>J. Choi\(^*\), <b>H. Zhou</b>\(^*\), S. Choi, R. Landig, W. W. Ho, J. Isoya, F. Jelezko, S. Onoda, H. Sumiya, D. A. Abanin, M. D. Lukin, <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.122.043603" target=&ldquo;blank&rdquo;>&lsquo;&lsquo;Probing Quantum Thermalization of a Disordered Dipolar Spin Ensemble with Discrete Time-Crystalline Order"</a>, Phys. Rev. Lett. 122, 043603 (2019)
+</p>
+</li>
+</ul>
+</td></tr></table>
+<ul>
+<li><p>T. Manovitz, S. H. Li, S. Ebadi, R. Samajdar, A. A. Geim, S. J. Evered, D. Bluvstein, <b>H. Zhou</b>, &hellip;, M. D. Lukin, <a href="https://arxiv.org/abs/2407.03249" target=&ldquo;blank&rdquo;>&lsquo;&lsquo;Quantum Coarsening and Collective Dynamics on a Programmable Quantum Simulator"</a>, arXiv:2407.03249
+</p>
+</li>
+<li><p>G. Kucsko\(^*\), S. Choi\(^*\), J. Choi\(^*\),  P. C. Maurer, <b>H. Zhou</b>, R. Landig, H. Sumiya, S. Onoda, J. Isoya, F. Jelezko, E. Demler, N. Y. Yao, M. D. Lukin, <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.121.023601" target=&ldquo;blank&rdquo;>&lsquo;&lsquo;Critical Thermalization of a Disordered Dipolar Spin System in Diamond"</a>, Phys. Rev. Lett. 121, 023601 (2018)
+</p>
+</li>
+<li><p>S. Choi\(^*\), J. Choi\(^*\), R. Landig\(^*\), G. Kucsko, <b>H. Zhou</b>, J. Isoya, F. Jelezko, S. Onoda, H. Sumiya, V. Khemani, C. von Keyserlingk, N. Y. Yao, E. Demler, M. D. Lukin, <a href="https://www.nature.com/articles/nature21426" target=&ldquo;blank&rdquo;>&lsquo;&lsquo;Observation of Discrete Time-Crystalline Order in a Disordered Dipolar Many-Body System"</a>, Nature 543, 221-225 (2017)
+</p>
+</li>
+</ul>
+<h2>Quantum Sensing and Metrology</h2>
+<p>Quantum metrology makes use of quantum-mechanical effects, such as superposition and entanglement, to detect weak signals with ultrahigh precision. To enhance sensitivity, it is desirable to increase the density of quantum sensors in the sensing volume. However, in practice, this sensitivity improvement is severely hindered by unwanted interactions between the sensors at a close distance. We demonstrate a novel approach to quantum metrology that overcomes this challenge by employing a robust control-pulse sequence, which decouples the sensor-sensor interactions while detecting a target signal with high sensitivity.
+</p>
+<table class="imgtable"><tr><td>
+<img src="data/metrology.png" alt="Quantum metrology" width="250 px" height="IMGLINKTARGET" />&nbsp;</td>
+<td align="left"><ul>
+<li><p><b>H. Zhou</b>, L. S. Martin, M. Tyler, O. Makarova, N. T. Leitao, H. Park, M. D. Lukin, <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.131.220803}" target=&ldquo;blank&rdquo;>&lsquo;&lsquo;Robust Higher-Order Hamiltonian Engineering for Quantum Sensing with Strongly Interacting Systems"</a>, Phys. Rev. Lett. 131, 220803 (2023)
+</p>
+</li>
+<li><p><b>H. Zhou</b>\(^*\), J. Choi\(^*\), S. Choi, R. Landig, A. M. Douglas, J. Isoya, F. Jelezko, S. Onoda, H. Sumiya, P. Cappellaro, H. S. Knowles, H. Park, M. D. Lukin, <a href="https://journals.aps.org/prx/abstract/10.1103/PhysRevX.10.031003" target=&ldquo;blank&rdquo;>&lsquo;&lsquo;Quantum Metrology with Strongly Interacting Spin Systems&ldquo;</a>, Phys. Rev. X 10, 031003 (2020) (featured in <a href="https://www.nature.com/articles/s41567-020-1011-9}" target=&rdquo;blank">Nature Physics</a>)
+</p>
+</li>
+</ul>
+</td></tr></table>
+<p>We also apply these nitrogen-vacancy (NV) centers in diamond to applications in biomedical sensing and other areas, probing and controlling cell division timing in C. elegans embryos and using NV centers as a temperature sensor.
+</p>
+<table class="imgtable"><tr><td>
+<img src="data/biomedical.JPG" alt="Biomedical sensing" width="250 px" height="IMGLINKTARGET" />&nbsp;</td>
+<td align="left"><ul>
+<li><p>J. Choi\(^*\), <b>H. Zhou</b>\(^*\), R. Landig, H.-Y. Wu, X. Yu, S. Von Stetina, G. Kucsko, S. Mango, D. Needleman, A. D. T. Samuel, P. Maurer, H. Park, M. D. Lukin, <a href="https://www.pnas.org/content/117/26/14636/tab-article-info" target=&ldquo;blank&rdquo;>&lsquo;&lsquo;Probing and Manipulating Embryogenesis via Nanoscale Thermometry and Temperature Control"</a>, PNAS 117 (26), 14636-14641 (2020)
+</p>
+</li>
+<li><p>N. Aslam, <b>H. Zhou</b>, E. K. Urbach, M. J. Turner, R. L. Walsworth, M. D. Lukin, H. Park, <a href="https://www.nature.com/articles/s42254-023-00558-3" target=&ldquo;blank&rdquo;>&lsquo;&lsquo;Quantum Sensors for Biomedical Applications"</a>, Nature Reviews Physics 5, 157–169 (2023)
+</p>
+</li>
+</ul>
+</td></tr></table>
+<ul>
+<li><p>B. L. Dwyer\(^*\), L. V. H. Rodgers\(^*\), E. K. Urbach\(^*\), D. Bluvstein, S. Sangtawesin, <b>H. Zhou</b>, Y. Nassab, M. Fitzpatrick, Z. Yuan, K. De Greve, E. L. Peterson, J.-P. Chou, A. Gali, V. V. Dobrovitski, M. D. Lukin, N. P. de Leon, <a href="https://link.aps.org/doi/10.1103/PRXQuantum.3.040328" target=&ldquo;blank&rdquo;>&lsquo;&lsquo;Probing Spin Dynamics on Diamond Surfaces Using a Single Quantum Sensor"</a>, Phys. Rev. X Quantum 3, 040328 (2022)
+</p>
+</li>
+<li><p>M. S. Chan, R. Landig, J. Choi, <b>H. Zhou</b>, X. Liao, M. D. Lukin, H. Park, P. K. Lo, <a href="https://pubs.acs.org/doi/abs/10.1021/acs.nanolett.9b00113" target=&ldquo;blank&rdquo;>&lsquo;&lsquo;Stepwise Ligand-Induced Self-Assembly for Facile Fabrication of Nanodiamond-Gold Nanoparticle Dimers via Non-Covalent Biotin-Streptavidin Interactions"</a>, Nano Lett. 19, 2020-2026 (2019)
+</p>
+</li>
+</ul>
+<h2>Past Research: Topology in Non-Hermitian Systems and Photonics</h2>
+<p>The ideas of topology have found tremendous success in closed physical systems, but even richer properties exist in the more general open or dissipative framework. I've worked on a number of different topological phenomena in non-Hermitian systems, their experimental realization in photonics, as well as their topological classification.
+</p>
+<table class="imgtable"><tr><td>
+<img src="data/ep.JPG" alt="Exceptional surfaces" width="250 px" height="IMGLINKTARGET" />&nbsp;</td>
+<td align="left"><ul>
+<li><p><b>H. Zhou</b>\(^*\), C. Peng\(^*\), Y. Yoon, C. W. Hsu, K. A. Nelson, L. Fu, J. D. Joannopoulos, M. Solja\(\check{\textrm{c}}\)i\(\grave{\textrm{c}}\), B. Zhen, <a href="http://science.sciencemag.org/content/359/6379/1009.abstract" target=&ldquo;blank&rdquo;>&lsquo;&lsquo;Observation of Bulk Fermi Arc and Polarization Half Charge from Paired Exceptional Points"</a>, Science 359, 1009-1012 (2018)
+</p>
+</li>
+<li><p><b>H. Zhou</b>, J. Y. Lee, <a href="https://journals.aps.org/prb/abstract/10.1103/PhysRevB.99.235112" target=&ldquo;blank&rdquo;>&lsquo;&lsquo;Periodic Table for Topological Bands with Non-Hermitian Symmetries"</a>, Phys. Rev. B 99, 235112 (2019)
+</p>
+</li>
+<li><p><b>H. Zhou</b>, J. Y. Lee, S. Liu, and B. Zhen, <a href="https://www.osapublishing.org/optica/abstract.cfm?uri=optica-6-2-190" target=&ldquo;blank&rdquo;>&lsquo;&lsquo;Exceptional Surfaces in \(\mathcal{PT}\)-Symmetric Non-Hermitian Photonic Systems"</a>, Optica 6, 190 (2019)
+</p>
+</li>
+</ul>
+</td></tr></table>
+<ul>
+<li><p><b>H. Zhou</b>, B. Zhen, C. W. Hsu, O. D. Miller, S. G. Johnson, J. D. Joannopoulos, M. Solja\(\check{\textrm{c}}\)i\(\grave{\textrm{c}}\), <a href="https://www.osapublishing.org/optica/abstract.cfm?uri=optica-3-10-1079" target=&ldquo;blank&rdquo;>&lsquo;&lsquo;Perfect Single-Sided Radiation and Absorption without Mirrors"</a>, Optica 3, 1079-1086 (2016)
+</p>
+</li>
+<li><p>J. Y. Lee, J. Ahn, <b>H. Zhou</b>, A. Vishwanath, <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.123.206404" target=&ldquo;blank&rdquo;>&lsquo;&lsquo;Topological Correspondence between Hermitian and Non-Hermitian Systems: Anomalous Dynamics"</a>, Phys. Rev. Lett. 123, 206404 (2019)
+</p>
+</li>
+</ul>
+<p>\(^\dagger\): corresponding author. \(^*\): equal contribution.
+</p>
 <div id="footer">
 <div id="footer-text">
-Page generated 2024-11-23 20:54:53 EST, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
+Page generated 2024-11-26 17:57:54 EST, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
 </div>
 </div>
 </td>
