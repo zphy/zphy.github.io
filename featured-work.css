@@ -20,17 +20,32 @@
   display: block;
 }
 
+.featured-work-media {
+  position: relative;
+  min-height: 420px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+}
+
 .featured-work-image {
   display: block;
   width: auto;
   max-width: 100%;
   height: auto;
   max-height: 420px;
-  margin: 0 auto;
+  margin: 0;
   background: #ffffff;
 }
 
 .featured-work-caption {
+  height: 95px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   padding: 12px 14px 14px;
   background: #ffffff;
   border-top: 1px solid #e7e7e7;
@@ -105,6 +120,10 @@
 }
 
 @media (max-width: 800px) {
+  .featured-work-media {
+    min-height: 260px;
+  }
+
   .featured-work-image {
     max-height: 260px;
   }

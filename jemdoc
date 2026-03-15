@@ -1512,8 +1512,8 @@ def procfile(f):
 
         elif len(g) >= 4 and g[1] == 'img_left':
           # handles
-          # {}{img_left}{source}{alttext}{width}{height}{linktarget}.
-          g += ['']*(7 - len(g))
+          # {}{img_left}{source}{alttext}{width}{height}{linktarget}{caption}.
+          g += ['']*(8 - len(g))
           
           if g[4].isdigit():
             g[4] += 'px'
@@ -1533,6 +1533,8 @@ def procfile(f):
           out(f.outf, ' />')
           if g[6]:
             out(f.outf, '</a>')
+          if g[7]:
+            out(f.outf, '<br /><span class="imgcaption">%s</span>' % g[7])
           out(f.outf, '&nbsp;</td>\n<td align="left">')
           imgblock = True
 

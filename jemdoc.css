@@ -370,3 +370,10 @@ table.imgtable, table.imgtable td {
 	border: none;
 	text-align: left;
 }
+
+span.imgcaption {
+	display: block;
+	margin-top: 4px;
+	font-size: 11px;
+	color: #888888;
+}

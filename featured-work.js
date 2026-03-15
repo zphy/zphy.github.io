@@ -92,6 +92,7 @@
 
     slides.forEach(function (slide) {
       var slideEl = makeEl("div", "featured-work-slide");
+      var media = makeEl("div", "featured-work-media");
       var img = makeEl("img", "featured-work-image");
       img.src = slide.image;
       img.alt = slide.title;
@@ -103,7 +104,8 @@
       if (displayMaxHeight) {
         img.style.maxHeight = displayMaxHeight;
       }
-      slideEl.appendChild(img);
+      media.appendChild(img);
+      slideEl.appendChild(media);
 
       var caption = makeEl("div", "featured-work-caption");
       caption.appendChild(makeEl("p", "featured-work-title", slide.title));
@@ -145,6 +147,11 @@
       for (var i = 0; i < slideEls.length; i++) {
         slideEls[i].classList.toggle("active", i === index);
         dotEls[i].classList.toggle("active", i === index);
+      }
+
+      var activeMedia = slideEls[index].querySelector(".featured-work-media");
+      if (activeMedia) {
+        activeMedia.appendChild(controls);
       }
     }
 
