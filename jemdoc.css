@@ -377,3 +377,70 @@ span.imgcaption {
 	font-size: 11px;
 	color: #888888;
 }
+
+@media (max-width: 900px) {
+	table#tlayout,
+	table#tlayout tbody,
+	table#tlayout tr,
+	#layout-menu,
+	#layout-content {
+		display: block;
+		width: 100%;
+		box-sizing: border-box;
+	}
+
+	#layout-menu {
+		padding: 0.6em 0.9em 0.35em;
+		border-left: none;
+		border-right: none;
+		border-top: none;
+		white-space: normal;
+	}
+
+	#layout-content {
+		width: auto;
+		min-width: 0;
+		padding-left: 0.9em;
+		padding-right: 0.9em;
+	}
+
+	div.menu-item {
+		display: inline-block;
+		padding-left: 0;
+		padding-right: 0.8em;
+		padding-bottom: 0.25em;
+		text-indent: 0;
+	}
+
+	#layout-menu a {
+		margin-left: 0;
+	}
+
+	table.imgtable,
+	table.imgtable tbody,
+	table.imgtable tr,
+	table.imgtable td {
+		display: block;
+		width: 100%;
+		box-sizing: border-box;
+	}
+
+	table.imgtable td {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	table.imgtable td:first-child {
+		padding-bottom: 0.75em;
+		text-align: center;
+	}
+
+	table.imgtable td:last-child {
+		text-align: left;
+	}
+
+	table.imgtable img {
+		max-width: min(210px, 100%);
+		height: auto;
+	}
+}
