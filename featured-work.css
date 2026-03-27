@@ -127,4 +127,13 @@
   .featured-work-image {
     max-height: 260px;
   }
+
+  .featured-work-caption {
+    height: auto;
+    min-height: 110px;
+  }
+
+  .featured-work-dots {
+    padding-top: 14px;
+  }
 }
