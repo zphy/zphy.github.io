@@ -119,11 +119,12 @@ strong {
 
 
 h1, h2, h3 {
-	color: #527bbd;
+	color: #365f8f;
+	font-weight: normal;
 	margin-top: 0.7em;
 	margin-bottom: 0.3em;
 	padding-bottom: 0.2em;
-	line-height: 1.0;
+	line-height: 1.15;
 	padding-top: 0.5em;
 	border-bottom: 1px solid #aaaaaa;
 }
