@@ -42,9 +42,299 @@ MathJax.Hub.Config({
 </div></div>
 <p>Develops the theory and practice of quantum error correction (QEC) and fault-tolerant quantum computation, with emphasis on recent developments. Begins with stabilizer codes and the Knill-Laflamme error-correction conditions, then outlines the full fault tolerance stack with surface codes, including lattice surgery, transversal gates, non-Clifford gates, and decoding. The second half of the course introduces high-rate quantum low-density parity-check codes and recent progress in logical gate design, concluding with examples of end-to-end fault-tolerant architecture design with resource estimation. Students simulate and benchmark QEC circuits, critique recent literature, and complete a research-style final project. Designed to introduce students to frontiers of QEC developments.
 </p>
+<h2>QEC Course Syllabus (Working Draft)</h2>
+<h2>Course goals</h2>
+<ul>
+<li><p>Develop a solid understanding of quantum error correction and the design of fault-tolerant architectures.
+</p>
+</li>
+<li><p>Build core numerical skills (QEC simulation, decoding, benchmarking).
+</p>
+</li>
+<li><p>Build core analytical skills (construction of quantum codes, gates, fault tolerance reasoning and proof techniques).
+</p>
+</li>
+<li><p>Gain fluency with current frontiers so students can start QEC research quickly.
+</p>
+</li>
+</ul>
+<h2>Intended audience</h2>
+<p>Advanced undergraduates, MEng students, and graduate students with an interest in quantum information/engineering or fault-tolerant architecture design.
+</p>
+<h2>Prerequisites (draft)</h2>
+<ul>
+<li><p>6.6410[J] (or 18.435[J] / equivalent quantum computation background)
+</p>
+</li>
+</ul>
+<h2>Textbook and general references</h2>
+<ul>
+<li><p>M. A. Nielsen and I. L. Chuang, Quantum Computation and Quantum Information, 10th Anniversary Edition, Cambridge University Press (2010). ISBN: 978-1-107-00217-3.
+</p>
+</li>
+<li><p><a href="https://www.cs.umd.edu/~dgottesm/QECCbook-2026.pdf">Daniel Gottesman, Surviving as a Quantum Computer in a Classical World, 2026 draft.</a>
+</p>
+</li>
+<li><p><a href="https://www.preskill.caltech.edu/ph229/">John Preskill, Physics 219/Computer Science 219, Chapter 7, Quantum Error Correction, March 2026.</a>
+</p>
+</li>
+</ul>
+<h2>Weekly schedule (12 weeks)</h2>
+<h3>Week 1: QEC foundations and course framing</h3>
+<ul>
+<li><p>QEC motivation and big-picture goals
+</p>
+</li>
+<li><p>The full pipeline of a fault-tolerant quantum computation
+</p>
+</li>
+<li><p>Review of basic QEC concepts (stabilizers, distance, etc.)
+</p>
+</li>
+</ul>
+<h3>Week 2: Fundamentals of error correction and fault tolerance</h3>
+<ul>
+<li><p>Quantum error correction conditions
+</p>
+</li>
+<li><p>Stabilizer codes, Clifford group, code parameter scaling
+</p>
+</li>
+</ul>
+<h3>Week 3: Surface code basics</h3>
+<ul>
+<li><p>Surface code and toric code construction, basic properties
+</p>
+</li>
+<li><p>Syndrome extraction circuits with the surface code
+</p>
+</li>
+<li><p>Space-time view of codes and detector error models
+</p>
+</li>
+</ul>
+<p><b>Key references:</b>
+</p>
+<ul>
+<li><p><a href="https://arxiv.org/abs/quant-ph/0110143">E. Dennis, A. Kitaev, A. Landahl, J. Preskill, "Topological quantum memory," J. Math. Phys. 43, 4452 (2002).</a>
+</p>
+</li>
+<li><p><a href="https://arxiv.org/abs/1208.0928">A. G. Fowler, M. Mariantoni, J. M. Martinis, A. N. Cleland, "Surface codes: Towards practical large-scale quantum computation," Phys. Rev. A 86, 032324 (2012).</a>
+</p>
+</li>
+<li><p><a href="https://arxiv.org/abs/2103.02202">C. Gidney, "Stim: a fast stabilizer circuit simulator," Quantum 5, 497 (2021).</a>
+</p>
+</li>
+</ul>
+<h3>Week 4: Clifford logic in the surface code</h3>
+<ul>
+<li><p>Memory and stability experiments
+</p>
+</li>
+<li><p>Lattice surgery and code deformation
+</p>
+</li>
+<li><p>Transversal gates
+</p>
+</li>
+</ul>
+<p><b>Key references:</b>
+</p>
+<ul>
+<li><p><a href="https://arxiv.org/abs/1808.02892">D. Litinski, "A Game of Surface Codes: Large-Scale Quantum Computing with Lattice Surgery," Quantum 3, 128 (2019).</a>
+</p>
+</li>
+<li><p><a href="https://arxiv.org/abs/2403.03272">Madelyn Cain, Chen Zhao, Hengyun Zhou, Nadine Meister, J. Pablo Bonilla Ataides, Arthur Jaffe, Dolev Bluvstein, and Mikhail D. Lukin, "Correlated decoding of logical algorithms with transversal gates" (2024).</a>
+</p>
+</li>
+<li><p><a href="https://arxiv.org/abs/2204.13834">Craig Gidney, "Stability Experiments: The Overlooked Dual of Memory Experiments," Quantum 6, 786 (2022).</a>
+</p>
+</li>
+</ul>
+<h3>Week 5: Non-Clifford logic in the surface code</h3>
+<ul>
+<li><p>Magic state distillation and injection
+</p>
+</li>
+<li><p>Magic state cultivation
+</p>
+</li>
+</ul>
+<p><b>Key references:</b>
+</p>
+<ul>
+<li><p><a href="https://arxiv.org/abs/quant-ph/0403025">S. Bravyi and A. Kitaev, "Universal quantum computation with ideal Clifford gates and noisy ancillas," Phys. Rev. A 71, 022316 (2005).</a>
+</p>
+</li>
+<li><p><a href="https://arxiv.org/abs/0811.4262">B. Eastin and E. Knill, "Restrictions on transversal encoded quantum gate sets," Phys. Rev. Lett. 102, 110502 (2009).</a>
+</p>
+</li>
+<li><p><a href="https://arxiv.org/abs/2409.17595">C. Gidney et al., "Magic state cultivation: growing T states as cheap as CNOT gates" (2024).</a>
+</p>
+</li>
+</ul>
+<h3>Week 6: Decoding the surface code</h3>
+<ul>
+<li><p>MWPM, Union-Find, decoder graph construction
+</p>
+</li>
+<li><p>Belief propagation and ML-flavored methods
+</p>
+</li>
+</ul>
+<p><b>Key references:</b>
+</p>
+<ul>
+<li><p><a href="https://arxiv.org/abs/2303.15933">O. Higgott and C. Gidney, "Sparse Blossom: correcting a million errors per core second with minimum-weight matching," Quantum 9, 1600 (2025).</a>
+</p>
+</li>
+<li><p><a href="https://arxiv.org/abs/1709.06218">N. Delfosse and N. H. Nickerson, "Almost-linear time decoding algorithm for topological codes," Quantum 5, 595 (2021).</a>
+</p>
+</li>
+<li><p><a href="https://arxiv.org/abs/2506.01779">Tristan Müller et al., "Improved belief propagation is sufficient for real-time decoding of quantum memory" (2025).</a>
+</p>
+</li>
+</ul>
+<h3>Week 7: qLDPC codes</h3>
+<ul>
+<li><p>Classical LDPC codes
+</p>
+</li>
+<li><p>Surface code as a hypergraph product
+</p>
+</li>
+<li><p>Hypergraph product codes
+</p>
+</li>
+</ul>
+<p><b>Key references:</b>
+</p>
+<ul>
+<li><p><a href="https://arxiv.org/abs/2103.06309">N. P. Breuckmann and J. N. Eberhardt, "Quantum Low-Density Parity-Check Codes," PRX Quantum 2, 040101 (2021).</a>
+</p>
+</li>
+<li><p><a href="https://doi.org/10.1109/TIT.2013.2292061">J.-P. Tillich and G. Zemor, "Quantum LDPC codes with positive rate and minimum distance proportional to the square root of the blocklength," IEEE Trans. Inf. Theory 60, 1193-1202 (2014).</a>
+</p>
+</li>
+</ul>
+<h3>Week 8: Homological view of qLDPC codes</h3>
+<ul>
+<li><p>Lifted products / balanced products
+</p>
+</li>
+<li><p>Chain complex formalism and homological intuition
+</p>
+</li>
+</ul>
+<p><b>Key references:</b>
+</p>
+<ul>
+<li><p><a href="https://www.nature.com/articles/s41586-024-07107-7">S. Bravyi, A. W. Cross, J. M. Gambetta, D. Maslov, P. Rall, and T. Yoder, "High-threshold and low-overhead fault-tolerant quantum memory," Nature 627, 778-782 (2024).</a>
+</p>
+</li>
+<li><p><a href="https://arxiv.org/abs/1311.0885">Sergey Bravyi and Matthew B. Hastings, "Homological Product Codes" (2014).</a>
+</p>
+</li>
+</ul>
+<h3>Week 9: Logical gates in qLDPC codes</h3>
+<ul>
+<li><p>Automorphism and fold-transversal gates in surface and qLDPC codes
+</p>
+</li>
+<li><p>LDPC code surgery
+</p>
+</li>
+</ul>
+<p><b>Key references:</b>
+</p>
+<ul>
+<li><p><a href="https://arxiv.org/abs/2407.18393">A. Cross, Z. He, P. Rall, and T. Yoder, "Improved QLDPC Surgery: Logical Measurements and Bridging Codes" (2024).</a>
+</p>
+</li>
+<li><p><a href="https://arxiv.org/abs/2503.10390">Z. He, A. Cowtan, D. J. Williamson, and T. J. Yoder, "Extractors: QLDPC Architectures for Efficient Pauli-Based Computation" (2025).</a>
+</p>
+</li>
+<li><p><a href="https://arxiv.org/abs/2110.10794">L. Z. Cohen, I. H. Kim, S. D. Bartlett, and B. J. Brown, "Low-overhead fault-tolerant quantum computing using long-range connectivity," Science Advances 8 (2022).</a>
+</p>
+</li>
+</ul>
+<h3>Week 10: End-to-end architectures</h3>
+<ul>
+<li><p>Transversal resource estimation example
+</p>
+</li>
+<li><p>LDPC resource estimation example
+</p>
+</li>
+</ul>
+<p><b>Key references:</b>
+</p>
+<ul>
+<li><p><a href="https://arxiv.org/abs/1905.09749">C. Gidney and M. Ekerå, "How to factor 2048 bit RSA integers in 8 hours using 20 million noisy qubits," Quantum 5, 433 (2021).</a>
+</p>
+</li>
+<li><p><a href="https://dl.acm.org/doi/10.1145/3695053.3731039">H. Zhou, C. Duckering, C. Zhao, D. Bluvstein, M. Cain, A. Kubica, S.-T. Wang, and M. D. Lukin, "Resource Analysis of Low-Overhead Transversal Architectures for Reconfigurable Atom Arrays," Proceedings of the 52nd Annual International Symposium on Computer Architecture (2025).</a>
+</p>
+</li>
+<li><p><a href="https://arxiv.org/abs/2602.11457">P. Webster et al., "The Pinnacle Architecture: Reducing the cost of breaking RSA-2048 to 100 000 physical qubits using quantum LDPC codes" (2026).</a>
+</p>
+</li>
+<li><p><a href="https://arxiv.org/abs/2603.28627">M. Cain et al., "Shor’s algorithm is possible with as few as 10,000 reconfigurable atomic qubits" (2026).</a>
+</p>
+</li>
+</ul>
+<h3>Week 11: Special topics and recent developments</h3>
+<ul>
+<li><p>TBD based on recent developments in the field
+</p>
+</li>
+</ul>
+<h3>Week 12: Final presentations</h3>
+<h2>Weekly format</h2>
+<ul>
+<li><p>Two 80-minute lectures
+</p>
+</li>
+</ul>
+<h2>Assessment</h2>
+<ul>
+<li><p>Problem sets: 20%
+</p>
+</li>
+<li><p>Midterm: 35%
+</p>
+</li>
+<li><p>Participation: 10%
+</p>
+</li>
+<li><p>Final presentation: 35%
+</p>
+</li>
+</ul>
+<h2>Generative AI use</h2>
+<h3>Use in course materials</h3>
+<p>GenAI tools are used to generate and transcribe lecture notes. However, the teaching staff is responsible for all content and has reviewed all materials.
+</p>
+<h3>Student use policy</h3>
+<p>Students may use GenAI to support learning, brainstorming, editing, debugging, or generating explanations, but may not use it to produce full or substantial assignment solutions. This is similar to the way that a student might ask a classmate or TA for assistance. If a student uses GenAI tools, they must fully reproduce the prompt, model, and responses used for each part of the submission that makes use of GenAI tools.
+</p>
+<h3>Prohibited uses</h3>
+<p>Prohibited uses may include:
+</p>
+<ul>
+<li><p>Copying full problem prompts into GenAI tools.
+</p>
+</li>
+<li><p>Asking GenAI to solve assigned problems.
+</p>
+</li>
+<li><p>Submitting AI-generated text, code, equations, or analysis as one’s own.
+</p>
+</li>
+</ul>
 <div id="footer">
 <div id="footer-text">
-Page generated 2026-04-21 22:45:27 EDT, by <a href="https://github.com/wsshin/jemdoc_mathjax">jemdoc+MathJax</a>.
+Page generated 2026-07-21 12:19:29 EDT, by <a href="https://github.com/wsshin/jemdoc_mathjax">jemdoc+MathJax</a>.
 </div>
 </div>
 </td>
