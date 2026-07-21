@@ -1,3 +1,4 @@
 
 *.jemdoc
 .DS_Store
+.worktrees/
