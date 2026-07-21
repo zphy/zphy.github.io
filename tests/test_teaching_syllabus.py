@@ -154,11 +154,14 @@ class TeachingSyllabusTest(unittest.TestCase):
         cls.anchor_pairs = parser.anchor_pairs
         cls.local_references = parser.local_references
         cls.final_stack = parser.stack
-        cls.draft_lines = [
-            normalize_markdown_line(line)
-            for line in DRAFT.read_text(encoding="utf-8").splitlines()
-            if normalize_markdown_line(line)
-        ]
+
+    def _load_draft(self) -> str:
+        self.assertTrue(DRAFT.is_file(), DRAFT)
+        return DRAFT.read_text(encoding="utf-8")
+
+    @staticmethod
+    def _draft_urls(draft: str) -> set[str]:
+        return set(re.findall(r"https?://\S+", draft))
 
     def test_html_structure_is_balanced(self) -> None:
         self.assertEqual([], self.final_stack)
@@ -195,13 +198,15 @@ class TeachingSyllabusTest(unittest.TestCase):
                 self.assertIn(wording, self.visible_text)
 
     def test_each_draft_url_is_linked_exactly_once(self) -> None:
+        source_urls = self._draft_urls(self._load_draft())
         self.assertEqual(25, len(EXPECTED_URLS))
-        for url in EXPECTED_URLS:
+        self.assertEqual(EXPECTED_URLS, source_urls)
+        for url in source_urls:
             with self.subTest(url=url):
                 self.assertEqual(1, self.links.count(url))
 
     def test_reference_descriptions_are_their_own_link_text(self) -> None:
-        for source_line in DRAFT.read_text(encoding="utf-8").splitlines():
+        for source_line in self._load_draft().splitlines():
             url_match = re.search(r"(https?://\S+)\s*$", source_line)
             if not url_match:
                 continue
@@ -210,8 +215,12 @@ class TeachingSyllabusTest(unittest.TestCase):
             with self.subTest(description=description):
                 self.assertIn(pair, self.anchor_pairs)
 
-    def test_ordered_draft_content_is_rendered(self) -> None:
-        expected_lines = list(self.draft_lines)
+    def test_full_draft_wording_and_order(self) -> None:
+        expected_lines = [
+            normalize_markdown_line(line)
+            for line in self._load_draft().splitlines()
+            if normalize_markdown_line(line)
+        ]
         self.assertEqual("QEC Course Syllabus", expected_lines[0])
         expected_lines[0] = "QEC Course Syllabus (Working Draft)"
         cursor = 0
