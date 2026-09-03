@@ -2,7 +2,7 @@
 = Teaching
 
 ~~~
-I am planning to teach [https://www.eecs.mit.edu/academics/subject-updates/subject-updates-fall-2026/\#6_S980 6.S980], a course on quantum error correction, in Fall 2026. Here is a tentative course description. If you have suggestions for the course structure or topics to cover, please let me know!
+I am planning to teach [https://www.eecs.mit.edu/academics/subject-updates/subject-updates-fall-2026/\#6_S980 6.S980], a course on quantum error correction, in Fall 2026. Lectures meet Thursdays and Fridays from 1:00 to 2:30 p.m. in room 24-115. Here is a tentative course description. If you have suggestions for the course structure or topics to cover, please let me know!
 ~~~
 
 Develops the theory and practice of quantum error correction (QEC) and fault-tolerant quantum computation, with emphasis on recent developments. Begins with stabilizer codes and the Knill-Laflamme error-correction conditions, then outlines the full fault tolerance stack with surface codes, including lattice surgery, transversal gates, non-Clifford gates, and decoding. The second half of the course introduces high-rate quantum low-density parity-check codes and recent progress in logical gate design, concluding with examples of end-to-end fault-tolerant architecture design with resource estimation. Students simulate and benchmark QEC circuits, critique recent literature, and complete a research-style final project. Designed to introduce students to frontiers of QEC developments.
@@ -141,7 +141,7 @@ Advanced undergraduates, MEng students, and graduate students with an interest i
 
 == Weekly format
 
-- Two 80-minute lectures
+- Thursdays and Fridays, 1:00--2:30 p.m., room 24-115
 
 == Assessment
 
