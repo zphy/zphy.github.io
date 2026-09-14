@@ -32,4 +32,4 @@ Copy `/Users/hyzhou/Downloads/Nathan Constantinides - NSF- F-1-cropped.jpg` to `
 
 ## Generation and Verification
 
-Edit the canonical `people.jemdoc` source and regenerate `people.html` with `./jemdoc -c mysite.conf people.jemdoc`. Verify that both generated cards contain the correct names, titles, biographies, image paths, ordering, and balanced HTML structure. Check both image files and inspect the rendered page visually. Run `git diff --check` and preserve unrelated working-tree files.
+Edit the canonical `people.jemdoc` source and regenerate `people.html` with `./jemdoc -c mysite.conf people.jemdoc`. Verify that all three generated cards contain the correct names, titles, biographies, image paths, ordering, and balanced HTML structure. Check all three image files and inspect the rendered page visually. Run `git diff --check` and preserve unrelated working-tree files.
