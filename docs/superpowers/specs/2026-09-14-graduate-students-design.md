@@ -26,9 +26,9 @@ Xicheng (Tristan) Wang, titled “PhD Student” and using two paragraphs:
 
 M. Subhi Abo Rdan, titled “MEng Student” and using two paragraphs:
 
-> I am an MEng student at the Massachusetts Institute of Technology (MIT), where I also completed my undergraduate degrees in Physics and Computer Science. My interests lie at the intersection of quantum information science, high-performance computing, and FPGA/GPU acceleration.
+> Subhi is an MEng student at the Massachusetts Institute of Technology (MIT), where he also completed his undergraduate degrees in Physics and Computer Science. His interests lie at the intersection of quantum information science, high-performance computing, and FPGA/GPU acceleration.
 >
-> My current research focuses on real-time reinforcement learning on FPGAs for quantum control and hardware acceleration of quantum error-correction decoders. Previously, I worked on FPGA systems for high-frequency trading at Optiver, FPGA prototyping at Apple, and FPGA-accelerated scientific computing at the MIT STAR Lab.
+> His current research focuses on real-time reinforcement learning on FPGAs for quantum control and hardware acceleration of quantum error-correction decoders. Previously, he worked on FPGA systems for high-frequency trading at Optiver, FPGA prototyping at Apple, and FPGA-accelerated scientific computing at the MIT STAR Lab.
 
 The profiles will appear after Kaavya Sahay and before Kuro in the order Nathan, Shaun, Tristan, and Subhi, following the order in which the profiles were supplied. Nathan and Shaun are titled “PhD Student.”
 
@@ -36,6 +36,8 @@ The profiles will appear after Kaavya Sahay and before Kuro in the order Nathan,
 
 Copy `/Users/hyzhou/Downloads/Nathan Constantinides - NSF- F-1-cropped.jpg` to `data/nathan_constantinides.jpg`. Create `data/shaun_pexton.jpg` as a square crop of `/Users/hyzhou/Downloads/2U1A6819-CHOSEN.JPG`. Center Shaun in the crop with his full head and upper torso visible. Copy `/Users/hyzhou/Downloads/王希呈社媒图片.jpg` to `data/xicheng_tristan_wang.jpg` without cropping. Copy `/Users/hyzhou/Downloads/IMG_1475.jpeg` to `data/m_subhi_abo_rdan.jpeg` without cropping. Do not modify the source files in Downloads. All four page entries will use the existing 210-pixel image width.
 
+Optimize Nathan’s, Shaun’s, and Subhi’s destination portraits to roughly 125–300 KB each, comparable with the original People-page portraits, while preserving their crops and aspect ratios. Tristan’s portrait remains unchanged because its approximately 110 KB size is already comparable. Do not alter the existing PI, Kaavya, Kuro, or Uncle Sam image files.
+
 ## Generation and Verification
 
-Edit the canonical `people.jemdoc` source and regenerate `people.html` with `./jemdoc -c mysite.conf people.jemdoc`. Verify that all four generated cards contain the correct names, titles, biographies, image paths, ordering, and balanced HTML structure. Check all four image files and inspect the rendered page visually. Run `git diff --check` and preserve unrelated working-tree files.
+Edit the canonical `people.jemdoc` source, remove only Kaavya Sahay’s email line, and regenerate `people.html` with `./jemdoc -c mysite.conf people.jemdoc`. Keep the PI email unchanged. Verify that all four generated cards contain the correct names, titles, biographies, image paths, ordering, and balanced HTML structure. Check all four image files and inspect the rendered page visually. Run `git diff --check` and preserve unrelated working-tree files.

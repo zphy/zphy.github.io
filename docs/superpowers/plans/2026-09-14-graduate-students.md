@@ -53,3 +53,34 @@ Run `git status --short` and `git diff -- people.html`. Confirm only the four in
 - [ ] **Step 8: Publish and verify the live page**
 
 Push `main` to `origin`, then compare `git rev-parse HEAD` with `git rev-parse origin/main`. Expected: the two commit hashes match. Open `https://zphy.github.io/people.html` after GitHub Pages updates and confirm all four names, titles, biographies, and portraits are present in the intended order. If the deployment is delayed, report the verified push separately from the still-pending live-page refresh rather than claiming publication is complete.
+
+## Chunk 2: Image Optimization and Email Removal
+
+### Task 2: Match existing portrait weights and revise member details
+
+**Files:**
+- Modify: `data/nathan_constantinides.jpg`
+- Modify: `data/shaun_pexton.jpg`
+- Modify: `data/m_subhi_abo_rdan.jpeg`
+- Modify: `people.jemdoc`
+- Modify: `people.html`
+
+- [ ] **Step 1: Optimize the three large portraits**
+
+Resize and recompress Nathan’s, Shaun’s, and Subhi’s destination portraits until each is approximately 125–300 KB. Preserve each image’s current crop and aspect ratio. Leave Tristan’s approximately 110 KB portrait and all original team portraits unchanged.
+
+- [ ] **Step 2: Revise the canonical profile text**
+
+Remove only Kaavya Sahay’s current-email line from `people.jemdoc`; retain the PI email. Convert Subhi’s two biography paragraphs to the exact third-person wording in the updated design specification.
+
+- [ ] **Step 3: Regenerate and verify**
+
+Run `./jemdoc -c mysite.conf people.jemdoc`. Confirm that Kaavya’s email is absent, the PI email remains, Subhi’s biography matches the specification, all four new images load, and the profile order is unchanged. Run the stack-based HTML nesting check and `git diff --check`.
+
+- [ ] **Step 4: Compare and inspect**
+
+List byte sizes and dimensions for every People-page portrait. Confirm Nathan, Shaun, and Subhi each fall in the 125–300 KB target and that no other image changed. Inspect the rendered People page at desktop and narrow widths to confirm the recompressed images remain sharp and correctly framed.
+
+- [ ] **Step 5: Commit, publish, and verify**
+
+Stage only the three optimized portraits and `people.html`; `people.jemdoc` remains intentionally ignored. Commit with message `Optimize team portraits and remove member email`. After review, push `main`, verify local and remote heads match, and confirm the updated live page.
